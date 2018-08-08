@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import { baseImgPath } from '@/config/env'
+
 import { mapActions, mapState } from 'vuex'
 
 export default {
   data () {
     return {
-      baseImgPath
+
     }
   },
   created () {
