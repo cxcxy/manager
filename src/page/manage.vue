@@ -4,7 +4,7 @@
 			<el-col  class="rightmenu" :span="4" style="min-height: 100%; background-color: #324057;">
 				<el-menu :default-active="defaultActive" background-color="#324057" text-color="#fff" style="min-height: 100%;" theme="dark" router>
 					<el-menu-item index="manage">
-						<i class="el-icon-menu"></i>首页</el-menu-item>
+						<i class="el-icon-menu"></i>西本后台管理系统</el-menu-item>
 					<el-submenu index="2">
 						<template slot="title">
 							<i class="el-icon-document"></i>客户端维护</template>

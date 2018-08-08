@@ -1,11 +1,12 @@
 <template>
 	<div class="header_container">
-		<el-breadcrumb separator="/">
-			<el-breadcrumb-item :to="{ path: '/manage' }">首页</el-breadcrumb-item>
-			<el-breadcrumb-item v-for="(item, index) in $route.meta" :key="index">{{item}}</el-breadcrumb-item>
+		<el-breadcrumb separator="/" text-color="#fff"
+      active-text-color="#ffd04b">
+			<!-- <el-breadcrumb-item :to="{ path: '/manage' }">首页</el-breadcrumb-item> -->
+			<el-breadcrumb-item v-for="(item, index) in $route.meta" :key="index" :to="{ path: item.path }">{{item}}</el-breadcrumb-item>
 		</el-breadcrumb>
 		<el-dropdown @command="handleCommand" menu-align='start'>
-			<img :src="baseImgPath + adminInfo.avatar" class="avator">
+			<img src="../assets/changeop.png" class="avator">
 			<el-dropdown-menu slot="dropdown">
 				<el-dropdown-item command="home">首页</el-dropdown-item>
 				<el-dropdown-item command="singout">退出</el-dropdown-item>
@@ -13,11 +14,7 @@
 		</el-dropdown>
 	</div>
 </template>
-
 <script>
-
-import { mapActions, mapState } from 'vuex'
-
 export default {
   data () {
     return {
@@ -25,21 +22,14 @@ export default {
     }
   },
   created () {
-    if (!this.adminInfo.id) {
-      this.getAdminData()
-    }
+    console.log('2222')
   },
   computed: {
-    ...mapState(['adminInfo'])
+
   },
   methods: {
-    ...mapActions(['getAdminData']),
-    async handleCommand (command) {
-      if (command === 'home') {
-        this.$router.push('/manage')
-      } else if (command === 'singout') {
-
-      }
+    handleCommand (command) {
+      this.$message('click on item ' + command)
     }
   }
 }
