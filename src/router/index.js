@@ -26,7 +26,7 @@ const addUserClient = r => require.ensure([], () => r(require('@/page/userRole/a
 // const uploadImg = r => require.ensure([], () => r(require('@/page/uploadImg')), 'uploadImg');
 // const vueEdit = r => require.ensure([], () => r(require('@/page/vueEdit')), 'vueEdit');
 // const adminSet = r => require.ensure([], () => r(require('@/page/adminSet')), 'adminSet')
-const explain = r => require.ensure([], () => r(require('@/page/explain')), 'explain')
+// const explain = r => require.ensure([], () => r(require('@/page/explain')), 'explain')
 
 const routes = [
   {
@@ -73,10 +73,6 @@ const routes = [
       path: '/createKey',
       component: createKey,
       meta: ['客户端维护', '生成密钥对']
-    }, {
-      path: '/explain',
-      component: explain,
-      meta: ['说明', '说明']
     }]
   }
 ]
